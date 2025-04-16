@@ -3,77 +3,87 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Болат & Айдана - Үйлену Тойына Шақыру</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <title>Болат & Айдана — Үйлену тойына шақыру</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap');
+
     body {
-      font-family: 'Great Vibes', cursive;
-      background-image: url('https://i.ibb.co/F7RzDRt/kazakh-pattern-gold.gif');
+      margin: 0;
+      font-family: 'Noto Serif', serif;
+      background: url('bg-pattern.gif') repeat;
       background-size: cover;
-      background-attachment: fixed;
-      background-repeat: repeat;
+      color: #fff8dc;
+      text-shadow: 1px 1px 2px #000;
     }
-    .bg-overlay {
-      background-color: rgba(255, 255, 255, 0.85);
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem;
+      background-color: rgba(0,0,0,0.6);
+      border-radius: 16px;
+      margin-top: 5vh;
+    }
+
+    h1, h2, p {
+      text-align: center;
+    }
+
+    .calendar {
+      font-size: 1.2rem;
+      margin: 2rem 0;
+    }
+
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      border-radius: 12px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    input, textarea, button {
+      padding: 0.7rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    button {
+      background-color: goldenrod;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #daa520;
     }
   </style>
 </head>
-<body class="min-h-screen text-center text-yellow-900">
-  <div class="max-w-2xl mx-auto p-6 rounded-xl shadow-xl bg-overlay">
-    <h1 class="text-5xl font-bold mb-4">Болат & Айдана</h1>
-    <p class="text-lg mb-2">Сізді біздің үйлену тойымызға шақырамыз</p>
-    <p class="text-2xl font-semibold mb-6">8 тамыз 2025 жыл, 18:00</p>
+<body>
+  <div class="container">
+    <h1>Болат & Айдана</h1>
+    <h2>Үйлену тойына шақырамыз!</h2>
+    <p>Сізді 8 тамыз 2025 жылы сағат 18:00-де өтетін қуанышымызға ортақтасуға шақырамыз.</p>
 
-    <div class="bg-white/70 p-4 rounded-xl shadow mb-6">
-      <h2 class="text-xl font-semibold mb-2">Мекенжай:</h2>
-      <p class="mb-2">Google Карта төменде көрсетілген</p>
-      <div class="aspect-video">
-        <iframe class="w-full h-full rounded-lg" src="https://maps.google.com/maps?q=63.598862,53.244101&z=15&output=embed"></iframe>
-      </div>
+    <div class="calendar">
+      📅 8 тамыз 2025 жыл | 🕕 18:00
     </div>
 
-    <div class="mt-8">
-      <h2 class="text-xl font-semibold mb-4">RSVP формасы</h2>
-      <form class="space-y-4 text-left max-w-md mx-auto">
-        <div>
-          <label class="block text-sm font-medium">Атыңыз:</label>
-          <input type="text" class="w-full p-2 rounded border border-yellow-700" required />
-        </div>
-        <div>
-          <label class="block text-sm font-medium">Қонақтар саны:</label>
-          <input type="number" class="w-full p-2 rounded border border-yellow-700" required />
-        </div>
-        <div>
-          <label class="block text-sm font-medium">Ескертулер:</label>
-          <textarea class="w-full p-2 rounded border border-yellow-700"></textarea>
-        </div>
-        <button type="submit" class="bg-yellow-700 text-white px-4 py-2 rounded hover:bg-yellow-800">Жіберу</button>
-      </form>
-    </div>
+    <iframe 
+      src="https://maps.google.com/maps?q=63.598862,53.244101&z=15&output=embed"
+      allowfullscreen=""
+      loading="lazy">
+    </iframe>
 
-    <div class="mt-10">
-      <h2 class="text-xl font-semibold mb-2">Тойға дейін:</h2>
-      <div id="countdown" class="text-2xl font-bold"></div>
-    </div>
-  </div>
-
-  <script>
-    const countdownEl = document.getElementById("countdown");
-    const weddingDate = new Date("2025-08-08T18:00:00").getTime();
-
-    function updateCountdown() {
-      const now = new Date().getTime();
-      const distance = weddingDate - now;
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      countdownEl.innerText = `${days} күн, ${hours} сағат, ${minutes} минут, ${seconds} секунд`;
-    }
-
-    setInterval(updateCountdown, 1000);
-  </script>
-</body>
-</html>
+    <form name="rsvp" netlify>
+      <h2>Қатысатыныңызды растаңыз</h2>
+      <input type="text" name="name" placeholder="Атыңыз" required />
+      <input type="email" name="email" placeholder="Email
