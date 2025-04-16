@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Тойға Шақыру - Талғат және Валентина</title>
+  <title>Тойға Шақыру - Болат және Айдана</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Amiri&display=swap" rel="stylesheet">
   <style>
@@ -51,15 +51,15 @@
 </head>
 <body class="min-h-screen text-center text-yellow-900">
   <div class="max-w-2xl mx-auto p-6 rounded-xl shadow-xl bg-overlay">
-    <h1 class="text-5xl font-bold mb-4">Талғат және Валентина</h1>
+    <h1 class="text-5xl font-bold mb-4">Болат және Айдана</h1>
     <p class="text-lg mb-2">Сіздерді біздің үйлену тойымызға шақырамыз!</p>
     <p class="text-2xl font-semibold mb-6">8 тамыз 2025 жыл, 18:00</p>
 
     <div class="bg-white/70 p-4 rounded-xl shadow mb-6">
       <h2 class="text-xl font-semibold mb-2">Мекенжай:</h2>
-      <p class="mb-2">Той ресторанының мекенжайы: Алматы, Абылай хан даңғылы, 10 үй</p>
+      <p class="mb-2">Костанай қаласы, 53-ші квартал, 5, ресторан Ханзада</p>
       <div class="aspect-video">
-        <iframe class="w-full h-full rounded-lg" src="https://maps.google.com/maps?q=63.598862,53.244101&z=15&output=embed"></iframe>
+        <iframe class="w-full h-full rounded-lg" src="https://maps.google.com/maps?q=53.244101,63.598862&z=15&output=embed"></iframe>
       </div>
     </div>
 
@@ -68,7 +68,7 @@
       <p class="mb-4">Сіздерді біздің үлкен күнімізге шақырамыз! Үйлену тойымыз 8 тамызда өтеді. Күнді күнтізбеңізге қосып, бізбен бірге қуанышты сәттерді бөлісіңіз.</p>
 
       <h3 class="text-lg font-semibold mb-4">Күнтізбе:</h3>
-      <input type="date" value="2025-08-08" class="mb-4 p-2 border border-yellow-500 rounded-lg" />
+      <input type="date" id="weddingDate" value="2025-08-08" class="mb-4 p-2 border border-yellow-500 rounded-lg" />
 
       <div class="rsvp-form mt-6">
         <h2 class="text-xl font-semibold mb-4">RSVP формасы</h2>
@@ -93,6 +93,11 @@
     <div class="mt-10">
       <h2 class="text-xl font-semibold mb-2">Тойға дейін:</h2>
       <div id="countdown" class="countdown"></div>
+    </div>
+
+    <div class="mt-10">
+      <h2 class="text-xl font-semibold mb-2">Ұйымдастырушылар:</h2>
+      <p class="text-lg">Той иелері: Талғат және Валентина</p>
     </div>
   </div>
 
